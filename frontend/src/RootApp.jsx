@@ -4,6 +4,7 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '@/redux/store';
+import DarkMode from './DarkMode'
 import PageLoader from '@/components/PageLoader';
 
 const IdurarOs = lazy(() => import('./apps/IdurarOs'));
@@ -13,6 +14,7 @@ export default function RoutApp() {
     <BrowserRouter>
       <Provider store={store}>
         <Suspense fallback={<PageLoader />}>
+          <DarkMode />
           <IdurarOs />
         </Suspense>
       </Provider>
